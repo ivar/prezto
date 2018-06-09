@@ -10,4 +10,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source custom aliases.
+if [[ -s "${ZDOTDIR:-$HOME}/.aliases" ]]; then
+  source "${ZDOTDIR:-$HOME}/.aliases"
+fi
+
 # Customize to your needs...
+
+
+# Initialize rbenv - see https://github.com/rbenv/rbenv#homebrew-on-macos
+eval "$(rbenv init -)"
