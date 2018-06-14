@@ -17,6 +17,9 @@ fi
 
 # Customize to your needs...
 
+# Add command line completion to 'mark' command. 
+# see https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org 
+compdef _files mark 
 
 # Initialize rbenv - see https://github.com/rbenv/rbenv#homebrew-on-macos
 eval "$(rbenv init -)"
