@@ -5,6 +5,12 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# brew shell completion - TODO: check zprezto to see if it's already added
+# https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -23,3 +29,6 @@ compdef _files mark
 
 # Initialize rbenv - see https://github.com/rbenv/rbenv#homebrew-on-macos
 eval "$(rbenv init -)"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/ivar/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
